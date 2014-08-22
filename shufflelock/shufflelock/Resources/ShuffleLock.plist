@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>items</key>
+			<array>
+			<dict>
+				<key>cell</key>
+				<string>PSGroupCell</string>
+				<key>label</key>
+				<string>Settings</string>
+			</dict>
+			<dict>
+    			<key>cell</key>
+    			<string>PSLinkCell</string>
+    			<key>label</key>
+    			<string>Activation Method(s)</string>
+    			<key>isController</key>
+    			<true/>
+    			<key>bundle</key>
+    			<string>LibActivator</string>
+    			<key>activatorListener</key>
+   		    	<string>com.cortex.shuffle</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSSwitchCell</string>
+				<key>default</key>
+				<false/>
+				<key>defaults</key>
+				<string>com.cortex.shuffle</string>
+				<key>key</key>
+				<string>enabled</string>
+				<key>label</key>
+				<string>Enable</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSEditTextCell</string>
+				<key>detail</key>
+				<string>PSDetailController</string>
+				<key>defaults</key>
+				<string>textbox1</string>
+				<key>key</key>
+				<string>text</string>
+				<key>label</key>
+				<string>Slider Text:</string>
+				<key>placeholder</key>
+				<string>slide to unlock</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSEditTextCell</string>
+				<key>detail</key>
+				<string>PSDetailController</string>
+				<key>defaults</key>
+				<string>textbox2</string>
+				<key>key</key>
+				<string>text</string>
+				<key>label</key>
+				<string>Slider Text 2:</string>
+				<key>placeholder</key>
+				<string>slide to unlock</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSEditTextCell</string>
+				<key>detail</key>
+				<string>PSDetailController</string>
+				<key>defaults</key>
+				<string>textbox3</string>
+				<key>key</key>
+				<string>text</string>
+				<key>label</key>
+				<string>Slider Text 3:</string>
+				<key>placeholder</key>
+				<string>slide to unlock</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSEditTextCell</string>
+				<key>detail</key>
+				<string>PSDetailController</string>
+				<key>defaults</key>
+				<string>textbox4</string>
+				<key>key</key>
+				<string>text</string>
+				<key>label</key>
+				<string>Slider Text 4:</string>
+				<key>placeholder</key>
+				<string>slide to unlock</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSEditTextCell</string>
+				<key>detail</key>
+				<string>PSDetailController</string>
+				<key>defaults</key>
+				<string>textbox5</string>
+				<key>key</key>
+				<string>text</string>
+				<key>label</key>
+				<string>Slider Text 5:</string>
+				<key>placeholder</key>
+				<string>slide to unlock</string>
+			</dict>
+			</array>
+		<key>title</key>
+		<string>ShuffleLock</string>
+	</dict>
+</plist>
