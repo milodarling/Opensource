@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = ShuffleLock;
+	cell = PSLinkCell;
+	detail = ShuffleLockListController;
+	icon = ShuffleLock.png;
+	isController = 1;
+	label = ShuffleLock;
+    };
+}
