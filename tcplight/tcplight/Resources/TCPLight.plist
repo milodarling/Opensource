@@ -95,10 +95,25 @@
 				<key>label</key>
 				<string>@openro0t</string>
 				<key>action</key>
-				<string>twitter</string>
+				<string>openTwitter</string>
 				<key>icon</key>
 				<string>/Applications/Preferences.app/Twitter.png</string>
+				<key>cellClass</key>
+				<string>SSTintedCell</string>
 			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSButtonCell</string>
+				<key>label</key>
+				<string>Source Code</string>
+				<key>action</key>
+				<string>openGit</string>
+				<key>icon</key>
+				<string>github.png</string>
+				<key>cellClass</key>
+				<string>SSTintedCell</string>
+			</dict>
+
 		</array>
 		<key>title</key>
 		<string>TCPLight</string>
