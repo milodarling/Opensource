@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>entry</key>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkCell</string>
+			<key>icon</key>
+			<string>/Applications/Preferences.app/Lighting.png</string>
+			<key>label</key>
+			<string>TCPLight</string>
+		</dict>
+		<key>items</key>
+		<array>
+			<dict>
+				<key>cell</key>
+				<string>PSGroupCell</string>
+				<key>label</key>
+				<string>Open the TCP app, go to the configure tab, go to "System Information", then put in your Gate way IP Address.</string>
+			</dict>
+			<dict>	
+				<key>cell</key>
+				<string>PSGroupCell</string>
+				<key>label</key>
+				<string>Example: 192.168.8.12</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSEditTextCell</string>
+				<key>default</key>
+				<string></string> 
+				<key>defaults</key>
+				<string>com.openro0t.userip</string>
+				<key>key</key>
+				<string>IP Address</string>
+			</dict>
+			<dict>	
+				<key>cell</key>
+				<string>PSGroupCell</string>
+				<key>label</key>
+				<string>Activator methods</string>
+			</dict>
+			<dict>
+    			<key>cell</key>
+    			<string>PSLinkCell</string>
+    			<key>label</key>
+    			<string>Full Brightness</string>
+    			<key>isController</key>
+    			<true/>
+    			<key>bundle</key>
+    			<string>LibActivator</string>
+    			<key>activatorListener</key>
+   		    	<string>com.openro0t.TCPLight.max</string>
+			</dict>
+			<dict>
+    			<key>cell</key>
+    			<string>PSLinkCell</string>
+    			<key>label</key>
+    			<string>Half brightness</string>
+    			<key>isController</key>
+    			<true/>
+    			<key>bundle</key>
+    			<string>LibActivator</string>
+    			<key>activatorListener</key>
+   		    	<string>com.openro0t.TCPLight.half</string>
+			</dict>
+			<dict>
+    			<key>cell</key>
+    			<string>PSLinkCell</string>
+    			<key>label</key>
+    			<string>Twenty percent brightness</string>
+    			<key>isController</key>
+    			<true/>
+    			<key>bundle</key>
+    			<string>LibActivator</string>
+    			<key>activatorListener</key>
+   		    	<string>com.openro0t.TCPLight.twenty</string>
+			</dict>
+			<dict>
+    			<key>cell</key>
+    			<string>PSLinkCell</string>
+    			<key>label</key>
+    			<string>Lights off</string>
+    			<key>isController</key>
+    			<true/>
+    			<key>bundle</key>
+    			<string>LibActivator</string>
+    			<key>activatorListener</key>
+   		    	<string>com.openro0t.TCPLight.off</string>
+			</dict>
+			<dict>
+				<key>cell</key>
+				<string>PSButtonCell</string>
+				<key>label</key>
+				<string>@openro0t</string>
+				<key>action</key>
+				<string>twitter</string>
+				<key>icon</key>
+				<string>/Applications/Preferences.app/Twitter.png</string>
+			</dict>
+		</array>
+		<key>title</key>
+		<string>TCPLight</string>
+	</dict>
+</plist>

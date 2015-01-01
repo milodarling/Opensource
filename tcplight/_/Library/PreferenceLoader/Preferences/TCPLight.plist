@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = TCPLight;
+	cell = PSLinkCell;
+	detail = TCPLightListController;
+	icon = TCPLight.png;
+	isController = 1;
+	label = TCPLight;
+    };
+}
