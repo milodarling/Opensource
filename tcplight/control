@@ -1,4 +1,4 @@
-Package: openro0t
+Package: com.openro0t.TCPLight
 Name: TCPLighting for Activator
 Depends: mobilesubstrate
 Version: 0.0.1
