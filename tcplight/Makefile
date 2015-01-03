@@ -2,6 +2,7 @@ ARCHS = armv7 arm64
 TARGET = iphone:clang
 include theos/makefiles/common.mk
 THEOS_BUILD_DIR = Packages
+CFLAGS = -fobjc-arc
 
 TWEAK_NAME = TCPLight
 TCPLight_FILES = Tweak.xm

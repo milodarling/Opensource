@@ -20,8 +20,23 @@ static int count;
 	if(_specifiers == nil) {
         NSMutableArray *specifiers = [[NSMutableArray alloc] init];
         PSSpecifier *spec;
+        spec = [PSSpecifier groupSpecifierWithHeader:@"Configure TCP Lights" footer:@"This will grab the device info necessary for the tweak to work."];
+        [specifiers addObject:spec];
+        
+        spec = [PSSpecifier preferenceSpecifierNamed:@"Configure"
+                                              target:self
+                                                 set:NULL
+                                                 get:NULL
+                                              detail:Nil
+                                                cell:PSButtonCell
+                                                edit:Nil];
+        spec->action = @selector(configure);
+        [spec setProperty:NSClassFromString(@"TCPTintedButtonCell") forKey:@"cellClass"];
+        [specifiers addObject:spec];
+        
         spec = [PSSpecifier groupSpecifierWithHeader:@"TCP Lights IP Address" footer:@"Open the TCP app, go to the configure tab, go to \"System Information\", then put in your Gate way IP Address."];
         [specifiers addObject:spec];
+        
         spec = [PSSpecifier preferenceSpecifierNamed:@""
                                                        target:self
                                                           set:@selector(setPreferenceValue:specifier:)
@@ -32,10 +47,13 @@ static int count;
         [spec setProperty:@"IPAddress" forKey:@"key"];
         [spec setProperty:@"com.openro0t.TCPLight-reloadSettings" forKey:@"PostNotification"];
         [specifiers addObject:spec];
+        
         spec = [PSSpecifier emptyGroupSpecifier];
         [specifiers addObject:spec];
+        
         NSDictionary *prefs = [NSDictionary dictionaryWithContentsOfFile:exampleTweakPreferencePath];
         count = [[prefs objectForKey:@"specCount"] intValue];
+        
         for (int i=1; i<=count; i++) {
             NSString *customNum = [NSString stringWithFormat:@"custom%d", i];
             int percentage = [[prefs objectForKey:customNum] intValue];
@@ -50,7 +68,9 @@ static int count;
             [spec setProperty:@(percentage) forKey:@"percentage"];
             [spec setProperty:NSStringFromSelector(@selector(removedSpecifier:)) forKey:PSDeletionActionKey];
             [specifiers addObject:spec];
+            
         }
+        
         spec = [PSSpecifier preferenceSpecifierNamed:@"New custom dim..."
                                               target:self
                                                  set:NULL
@@ -61,8 +81,10 @@ static int count;
         spec->action = @selector(newCustom);
         [spec setProperty:NSClassFromString(@"TCPTintedButtonCell") forKey:@"cellClass"];
         [specifiers addObject:spec];
+        
         spec = [PSSpecifier emptyGroupSpecifier];
         [specifiers addObject:spec];
+        
         spec = [PSSpecifier preferenceSpecifierNamed:@"Riley Durant"
                                               target:self
                                                  set:NULL
@@ -74,6 +96,7 @@ static int count;
         [spec setProperty:@"openro0t" forKey:@"screenName"];
         [spec setProperty:NSClassFromString(@"TCPCoolTwitterCell") forKey:@"cellClass"];
         [specifiers addObject:spec];
+        
         spec = [PSSpecifier preferenceSpecifierNamed:@"Milo Darling"
                                               target:self
                                                  set:NULL
@@ -85,6 +108,7 @@ static int count;
         [spec setProperty:@"JamesIscNeutron" forKey:@"screenName"];
         [spec setProperty:NSClassFromString(@"TCPCoolTwitterCell") forKey:@"cellClass"];
         [specifiers addObject:spec];
+        
         spec = [PSSpecifier preferenceSpecifierNamed:@"Source on GitHub"
                                               target:self
                                                  set:NULL
@@ -95,6 +119,7 @@ static int count;
         spec->action = @selector(openGit);
         [spec setProperty:NSClassFromString(@"TCPTintedButtonCell") forKey:@"cellClass"];
         [specifiers addObject:spec];
+        
         _specifiers = [specifiers copy];
 		//_specifiers = [[self loadSpecifiersFromPlistName:@"TCPLight" target:self] retain];
 	}
@@ -165,9 +190,7 @@ static int count;
 -(void) setPreferenceValue:(id)value specifier:(PSSpecifier*)specifier {
     NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
     [defaults addEntriesFromDictionary:[NSDictionary dictionaryWithContentsOfFile:exampleTweakPreferencePath]];
-    double tempVal = [value intValue];
-    int rounded = (int)(tempVal + 0.5);
-    [defaults setObject:@(rounded) forKey:specifier.properties[@"key"]];
+    [defaults setObject:value forKey:specifier.properties[@"key"]];
     [defaults writeToFile:exampleTweakPreferencePath atomically:YES];
     //NSDictionary *exampleTweakSettings = [NSDictionary dictionaryWithContentsOfFile:exampleTweakPreferencePath];
     CFStringRef toPost = (CFStringRef)specifier.properties[@"PostNotification"];
