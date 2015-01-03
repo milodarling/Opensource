@@ -1,3 +1,5 @@
+ARCHS = armv7 arm64
+TARGET = iphone:clang
 include theos/makefiles/common.mk
 
 BUNDLE_NAME = TCPLight
